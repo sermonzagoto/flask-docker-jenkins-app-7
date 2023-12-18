@@ -12,7 +12,7 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'sermonzagoto', url: 'https://github.com/sermonzagoto/flask-docker-jenkins-app-7']])
             }
         }
-        stage('Building the image') {
+        stage('Build image') {
             steps {
                 git 'https://github.com/sermonzagoto/flask-docker-jenkins-app-7.git'
                 sh 'docker build -t my-image:${BUILD_NUMBER} .'
