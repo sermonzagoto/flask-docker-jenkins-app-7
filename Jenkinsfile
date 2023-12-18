@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Build image') {
             steps {
+                git 'https://github.com/sermonzagoto/flask-docker-jenkins-app-7.git'
                 sh 'docker build -t my-image:${BUILD_NUMBER} .'
             }
         }
