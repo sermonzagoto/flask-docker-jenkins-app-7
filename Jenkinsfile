@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Cloning the code') {
             steps {
-                git branch: 'main', url: 'git@github.com:sermonzagoto/flask-docker-jenkins-app-7.git'
+                git branch: 'main', url: 'https://github.com/sermonzagoto/flask-docker-jenkins-app-7.git'
             }
         }
         stage('Build the image') {
