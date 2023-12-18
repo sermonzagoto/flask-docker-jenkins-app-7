@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build the image') {
             steps {
-                git 'https://github.com/sermonzagoto/flask-docker-jenkins-app-7.git'
+                git 'git@github.com:sermonzagoto/flask-docker-jenkins-app-7.git'
                 sh 'docker build -t flask-docker-jenkins-app-7:v.7 .'
             }
         }
