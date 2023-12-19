@@ -7,9 +7,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone the image') {
+            steps {
+                git 'https://github.com/sermonzagoto/flask-docker-jenkins-app-7.git'
+            }
+        }
         stage('Build the image') {
             steps {
-                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
     }
